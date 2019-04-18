@@ -28,7 +28,7 @@ def word_substituter(tweet)
   words = tweet.split(" ")
   words.collect do |word|
     dictionary.collect do |key, value|
-      if word.downcase == key 
+      if word == key 
         word.replace(value)
       end
     end
