@@ -16,5 +16,11 @@ end
 
 def word_substituter(tweet)
   tweet.split(" ").map do |word|
-    
+    dictionary.map do |key, value|
+      if word == key
+        word.replace(value)
+      end
+    end
+  end
+  tweet.join(" ")    
 end
