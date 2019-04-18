@@ -15,13 +15,15 @@ def dictionary
 end
 
 def word_substituter(tweet)
-  tweet.split(" ").map do |word|
+  array = tweet.split(" ")
+  array.map do |word|
     if dictionary.keys.include?(word)
       word = dictionary[word]
     else
       word
     end
-  end.join(" ")
+  end
+  .join(" ")
 end
 
 def bulk_tweet_shortener(tweet)
