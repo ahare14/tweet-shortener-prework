@@ -47,5 +47,5 @@ def shortened_tweet_truncator(tweet)
   else
     shortened << word_substituter(tweet)
   end
-  shortened.join(" ")
+  shortened
 end
