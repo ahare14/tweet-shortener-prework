@@ -15,13 +15,13 @@ def dictionary
 end
 
 def word_substituter(str_tweets)
-  result = []
-  arr_dictionary = dictionary.keys
-  arr_tweets = str_tweets.split(' ')
-  arr_tweets.each do |word|
-    arr_dictionary.include?(word) ? result << dictionary[word] : result << word
-  end
-  result.join(' ')
+  tweet.split(" ").map do |word|
+      if dictionary.keys.include?(word.downcase)
+        word = dictionary[word.downcase]
+      else
+        word
+    end
+  end.join(" ")
 end
 
 
