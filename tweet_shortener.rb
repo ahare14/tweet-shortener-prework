@@ -18,13 +18,13 @@ def word_substituter(tweet)
   words = tweet.split(" ")
   words.collect do |word|
     dictionary.collect do |key, value|
-      if word == key 
+      if word == key
         word.replace(value)
-      end 
+      end
     end
-  end 
+  end
   words.join(" ")
-end 
+end
 
 
 def bulk_tweet_shortener(tweets)
