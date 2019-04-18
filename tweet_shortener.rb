@@ -14,16 +14,14 @@ def dictionary
   }
 end
 
-def word_substituter(tweet)
-  words = tweet.split(" ")
-  words.collect do |word|
-    dictionary.collect do |key, value|
-      if word == key
-        word.replace(value)
-      end
-    end
+def word_substituter(str_tweets)
+  result = []
+  arr_dictionary = dictionary.keys
+  arr_tweets = str_tweets.split(' ')
+  arr_tweets.each do |word|
+    arr_dictionary.include?(word) ? result << dictionary[word] : result << word
   end
-  words.join(" ")
+  result.join(' ')
 end
 
 
